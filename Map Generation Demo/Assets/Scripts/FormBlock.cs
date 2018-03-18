@@ -8,6 +8,7 @@ public class FormBlock : MonoBehaviour {
     private bool upCheck;
     private bool rightCheck;
     private bool leftCheck;
+
     private Vector3 myLocation;
 
     public Sprite leftCliff; // Something Right
@@ -15,11 +16,12 @@ public class FormBlock : MonoBehaviour {
     public Sprite rightCliff; // Something Left
     public Sprite rightEdge; // Something Above and Left
     public Sprite plainGrass; // Something Left and Right
+    public Sprite pillarGrass; // Nothing detected
     public Sprite pillar; // Nothing detected
 
     public SpriteRenderer thisBlockSprite;
 
-    private void Start() {
+    void Start() {
         myLocation = transform.position;
     }
 
@@ -44,7 +46,7 @@ public class FormBlock : MonoBehaviour {
             }
 
             if(!upCheck && !leftCheck && !rightCheck) {
-                thisBlockSprite.sprite = pillar; // Nothing detected
+                thisBlockSprite.sprite = pillarGrass; // Nothing detected
             } else if(!upCheck && leftCheck && rightCheck) {
                 thisBlockSprite.sprite = plainGrass; // Something Left and Right
             } else if(upCheck && leftCheck && !rightCheck) {
@@ -55,9 +57,9 @@ public class FormBlock : MonoBehaviour {
                 thisBlockSprite.sprite = leftEdge; // Something Above and Right
             } else if(!upCheck && !leftCheck && rightCheck) {
                 thisBlockSprite.sprite = leftCliff; // Something Right
+            } else if(upCheck && !leftCheck && !rightCheck) {
+                thisBlockSprite.sprite = pillar; // Something Above
             }
-
-            Debug.Log(CheckLocation(myLocation));
         }
 	}
 
@@ -65,7 +67,6 @@ public class FormBlock : MonoBehaviour {
         float radius = .3f;
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(center, radius);
         int i = 0;
-        Debug.Log (hitColliders.Length);
         if (i < hitColliders.Length) {
             return (true);
         } else {
@@ -75,7 +76,6 @@ public class FormBlock : MonoBehaviour {
 
     private void OnDrawGizmos () {
         Gizmos.color = Color.red;
-     //Use the same vars you use to draw your Overlap SPhere to draw your Wire Sphere.
         Gizmos.DrawWireSphere(transform.position, .3f);
     }
 }

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50505816263424538}
   m_Layer: 0
   m_Name: FormBlock
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,8 @@ MonoBehaviour:
   rightCliff: {fileID: 21300006, guid: dcf656cdc2f09f2409920ecf749dae62, type: 3}
   rightEdge: {fileID: 21300012, guid: dcf656cdc2f09f2409920ecf749dae62, type: 3}
   plainGrass: {fileID: 21300004, guid: dcf656cdc2f09f2409920ecf749dae62, type: 3}
-  pillar: {fileID: 21300000, guid: dcf656cdc2f09f2409920ecf749dae62, type: 3}
+  pillarGrass: {fileID: 21300000, guid: dcf656cdc2f09f2409920ecf749dae62, type: 3}
+  pillar: {fileID: 21300002, guid: e5758f47fff89ed4f98f5b5f93691168, type: 3}
   thisBlockSprite: {fileID: 212325531468377656}
 --- !u!212 &212325531468377656
 SpriteRenderer:

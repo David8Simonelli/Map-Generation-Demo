@@ -357,7 +357,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 443883491}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1289156968}
+        m_MethodName: GenerateSurfaceChunk
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &443883491
@@ -642,7 +653,8 @@ MonoBehaviour:
   height: 5
   heightMultiplier: 5
   heightAddition: 2
-  smoothness: 1
+  inputField: {fileID: 1493796155}
+  gameObjects: []
 --- !u!4 &1289156969
 Transform:
   m_ObjectHideFlags: 0
@@ -808,14 +820,14 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1493796156}
   m_TextComponent: {fileID: 412605133}
   m_Placeholder: {fileID: 1291588682}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
-  m_CharacterLimit: 0
+  m_CharacterValidation: 1
+  m_CharacterLimit: 5
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
